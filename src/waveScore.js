@@ -4,5 +4,11 @@ class WaveScore {
     this.swellHeight = swellHeight;
     this.windDirection = windDirection;
   }
-  
+
+  getSwellPeriodScore() {
+    return 3;
+  }
+
 }
+
+export { WaveScore };
