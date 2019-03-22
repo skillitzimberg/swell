@@ -46,7 +46,11 @@ class WaveScore {
   }
 
   calculateSurfRating() {
-    return 0;
+    const swellPeriodScore = this.getSwellPeriodScore();
+    const waveSizeScore = this.getWaveSizeScore();
+    const windDirectionScore = this.getWindDirectionScore();
+
+    return (swellPeriodScore + waveSizeScore + windDirectionScore) / 3
   }
 
 }
