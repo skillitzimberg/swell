@@ -17,6 +17,10 @@ class WaveScore {
     }
   }
 
+  getWindDirectionScore() {
+    return 0;
+  }
+
 }
 
 export { WaveScore };

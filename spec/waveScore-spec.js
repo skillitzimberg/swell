@@ -9,4 +9,12 @@ describe('WaveScore', () => {
     expect(waveScore.getSwellPeriodScore()).toEqual(4);
   });
 
+  it('getWindDirectionScore() should return wind direction score', () => {
+    const swellPeriod = 19.0;
+    const swellHeight = 1.8;
+    const windDirection = 'SW';
+    let waveScore = new WaveScore(swellPeriod, swellHeight, windDirection);
+    expect(waveScore.getWindDirectionScore()).toEqual(1);
+  });
+
 });
