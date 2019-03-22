@@ -2,6 +2,10 @@ body {
   background-color: #ddd;
 }
 
-.glyphicon {
-    font-size: 40px;
+#display {
+  margin: 30px;
+}
+
+#date {
+  font-weight: bold;
 }
