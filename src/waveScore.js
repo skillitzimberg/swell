@@ -30,7 +30,19 @@ class WaveScore {
   }
 
   getWaveSizeScore() {
-    return 0;
+    const waveSize = this.swellHeight * this.swellPeriod;
+
+    if (waveSize >= 30) {
+      return 5;
+    } else if (waveSize >= 25) {
+      return 4;
+    } else if (waveSize >= 20) {
+      return 3;
+    } else if (waveSize >= 11) {
+      return 2;
+    } else {
+      return 1;
+    }
   }
 
 }
