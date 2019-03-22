@@ -17,4 +17,12 @@ describe('WaveScore', () => {
     expect(waveScore.getWindDirectionScore()).toEqual(1);
   });
 
+  it('getWaveSizeScore() should return wave size score', () => {
+    const swellPeriod = 17.4;
+    const swellHeight = 2.3;
+    const windDirection = 'SSW';
+    let waveScore = new WaveScore(swellPeriod, swellHeight, windDirection);
+    expect(waveScore.getWaveSizeScore()).toEqual(5);
+  });
+
 });

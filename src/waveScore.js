@@ -29,6 +29,10 @@ class WaveScore {
     }
   }
 
+  getWaveSizeScore() {
+    return 0;
+  }
+
 }
 
 export { WaveScore };
