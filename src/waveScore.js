@@ -45,6 +45,10 @@ class WaveScore {
     }
   }
 
+  calculateSurfRating() {
+    return 0;
+  }
+
 }
 
 export { WaveScore };

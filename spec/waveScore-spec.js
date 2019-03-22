@@ -25,4 +25,12 @@ describe('WaveScore', () => {
     expect(waveScore.getWaveSizeScore()).toEqual(5);
   });
 
+  it('calculateSurfRating() should return surf rating', () => {
+    const swellPeriod = 13.8;
+    const swellHeight = 1.8;
+    const windDirection = 'S';
+    const waveScore = new WaveScore(swellPeriod, swellHeight, windDirection);
+    expect(waveScore.calculateSurfRating()).toEqual(10/3);
+  });
+
 });
