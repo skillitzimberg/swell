@@ -18,7 +18,15 @@ class WaveScore {
   }
 
   getWindDirectionScore() {
-    return 0;
+    if (this.windDirection === 'E') {
+      return 5;
+    } else if (this.windDirection === 'NE' || this.windDirection === 'SE') {
+      return 4;
+    } else if (this.windDirection === 'S') {
+      return 3;
+    } else {
+      return 1;
+    }
   }
 
 }
