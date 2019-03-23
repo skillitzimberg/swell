@@ -1,10 +1,8 @@
-# [swell](./ABOUTTEMPLATE.md)
-This is a template README. See [ABOUT TEMPLATE JS](./ABOUTTEMPLATE.md) for details.
+# [swell](https://github.com/skillitzimberg/swell)
 
 ## Table of contents
 **[Description](#description)**<br>
 **[Resources](#resources)**<br>
-**[Planning](#planning)**<br>
 **[Installation Instructions](#setup-and-installation)**<br>
 **[Known Bugs](#known-bugs)**<br>
 **[Support](#support-and-contact-details)**<br>
@@ -12,27 +10,31 @@ This is a template README. See [ABOUT TEMPLATE JS](./ABOUTTEMPLATE.md) for detai
 **[License](#license)**<br>
 
 ### Author
+Scott Bergler  
 
 ## Description
+Get data from a single NOAA bouy to calculate a surf condition rating.
 
 ## Setup and Installation
+Clone the project from [GitHub](https://github.com/skillitzimberg/swell).  
+Run ```cd swell``` in your terminal.  
+Run ```yarn install``` or ```npm install```.  
+If you use npm you may be prompted to remove the yarn-lock file. That's fine. npm will create a package-lock file.  
+To run the tests use ```yarn test``` or ```npm run test```.  
+To run the project in a browser use ```yarn start``` or ```npm run start```.  
+
 See [ABOUT TEMPLATE JS](./ABOUTTEMPLATE.md).
 
 ## Resources
-[ABOUT TEMPLATE JS](./ABOUTTEMPLATE.md): This project was instantiated using a template created by Scott Bergler. ABOUTTEMPLATE is a run-down on what this template includes, why it's included, and how to use it.
-
-[PROJECT PLANNING](./PLANNING.md): Outlines planning criteria, use cases, specifications, notes, and errata.
+[ABOUT TEMPLATE JS](./ABOUTTEMPLATE.md): This project was instantiated using a template. ABOUTTEMPLATE is a run-down on what this template includes, why it's included, and how to use it.
 
 ## Known Bugs
+I attempted to learn how to test api calls, but just ran out of time. The failed attempt is still in the project. It gives a false positive - it won't fail.
 
 ## Support and contact details
 Scott Bergler :: commandinghands@gmail.com
 
 ## Technologies Used
-(This wonderful table was pilfered from [Tanvi Garg](https://github.com/TanviCodeLife) and modestly edited for my own sensibilities.)
-
-For versions and a full list of dependencies, plugins, and scripts see the "devDependencies" section in [package.json](./package.json).  
-
 | Dependency | Description |
 | --- | --- |
 | babel-core | Babel compiler core |
