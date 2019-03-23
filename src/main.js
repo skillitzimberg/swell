@@ -9,17 +9,30 @@ $(document).ready(function() {
   const url = 'https://www.ndbc.noaa.gov/data/realtime2/46029.spec';
   const newBouyData = new BouyData();
   
-  const currentBouyData = newBouyData.getBouyData(url);
-
+  let currentBouyData = newBouyData.getBouyData(url);
   currentBouyData.then((text) => {
-    
+    const today = new Date();
+    let lineDate;
+    let line;
+    let lineArray;
     const lines = text.split('\n');
-    const currentData = lines[2];
-    const tabs = currentData.split(' ');
+    let currentData;
+    
+    for (let i = 2; i < lines.length; i++) {
+      line = lines[i];
+      lineArray = line.split(' ');
+      lineDate = new Date(lineArray[0], lineArray[1] - 1, lineArray[2]).toLocaleDateString();
+      debugger;
+      if ( today.toLocaleDateString() === lineDate && today.getHours() === parseInt(lineArray[3]) ) {
+        currentData = lineArray;
+      }
+    }
+    console.log('currentData after: ', currentData);
 
-    const cleanData = tabs.filter( (element) => {
+    const cleanData = currentData.filter( (element) => {
       return element != "";
     });
+    console.log('cleanData: ', cleanData);
 
     const year = parseInt(cleanData[0]);
     const month = parseInt(cleanData[1]) - 1;
@@ -41,6 +54,12 @@ $(document).ready(function() {
     $('#swellHeight').append(`Swell Height: ${swellHeight}`);
     $('#windDirection').append(`Wind Direction: ${windDirection}`);
     $('#waveScore').append(`Wave Score: ${waveScore}`);
-  });
 
+    $( "#update" ).click(function() {
+      currentBouyData = newBouyData.getBouyData(url);
+      console.log(currentBouyData, " ", new Date());
+    });
+  }).catch(function(error) {
+    $('#error').append(`Wave Score: ${error}`);
+  });
 });
