@@ -22,17 +22,15 @@ $(document).ready(function() {
       line = lines[i];
       lineArray = line.split(' ');
       lineDate = new Date(lineArray[0], lineArray[1] - 1, lineArray[2]).toLocaleDateString();
-      debugger;
+      
       if ( today.toLocaleDateString() === lineDate && today.getHours() === parseInt(lineArray[3]) ) {
         currentData = lineArray;
       }
     }
-    console.log('currentData after: ', currentData);
 
     const cleanData = currentData.filter( (element) => {
       return element != "";
     });
-    console.log('cleanData: ', cleanData);
 
     const year = parseInt(cleanData[0]);
     const month = parseInt(cleanData[1]) - 1;
@@ -57,7 +55,6 @@ $(document).ready(function() {
 
     $( "#update" ).click(function() {
       currentBouyData = newBouyData.getBouyData(url);
-      console.log(currentBouyData, " ", new Date());
     });
   }).catch(function(error) {
     $('#error').append(`Wave Score: ${error}`);
