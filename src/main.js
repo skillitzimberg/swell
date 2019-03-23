@@ -17,16 +17,21 @@ $(document).ready(function() {
     const currentData = lines[2];
     const tabs = currentData.split(' ');
 
-    const year = parseInt(tabs[0]);
-    const month = parseInt(tabs[1]) - 1;
-    const day = parseInt(tabs[2]);
+    const cleanData = tabs.filter( (element) => {
+      return element != "";
+    });
+
+    const year = parseInt(cleanData[0]);
+    const month = parseInt(cleanData[1]) - 1;
+    const day = parseInt(cleanData[2]);
     
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     const date = new Date(year, month, day).toLocaleDateString("en-US", options);
 
-    const swellHeight = parseFloat(tabs[8]).toPrecision(2);
-    const swellPeriod = parseFloat(tabs[9]).toPrecision(3);
-    const windDirection = tabs[15];
+    const swellHeight = parseFloat(cleanData[6]).toPrecision(2);
+    const swellPeriod = parseFloat(cleanData[7]).toPrecision(3);
+
+    let windDirection = cleanData[11];
 
     const newWaveScore = new WaveScore(swellPeriod, swellHeight, windDirection);
     const waveScore = newWaveScore.calculateSurfRating().toPrecision(3);
