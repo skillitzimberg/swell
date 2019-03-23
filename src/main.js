@@ -12,11 +12,12 @@ $(document).ready(function() {
   let currentBouyData = newBouyData.getBouyData(url);
   currentBouyData.then((text) => {
     const today = new Date();
-    let lineDate;
-    let line;
     let lineArray;
-    const lines = text.split('\n');
+    let line;
+    let lineDate;
     let currentData;
+
+    const lines = text.split('\n');
     
     for (let i = 2; i < lines.length; i++) {
       line = lines[i];
@@ -28,9 +29,11 @@ $(document).ready(function() {
       }
     }
 
-    const cleanData = currentData.filter( (element) => {
+    let cleanData = currentData.filter( (element) => {
       return element != "";
     });
+
+    console.log(cleanData);
 
     const year = parseInt(cleanData[0]);
     const month = parseInt(cleanData[1]) - 1;
@@ -53,9 +56,6 @@ $(document).ready(function() {
     $('#windDirection').append(`Wind Direction: ${windDirection}`);
     $('#waveScore').append(`Wave Score: ${waveScore}`);
 
-    $( "#update" ).click(function() {
-      currentBouyData = newBouyData.getBouyData(url);
-    });
   }).catch(function(error) {
     $('#error').append(`Wave Score: ${error}`);
   });
