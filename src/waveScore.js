@@ -8,7 +8,7 @@ class WaveScore {
   getSwellPeriodScore() {
     if (this.swellPeriod >= 16) {
       return 5;
-    } else if (this.swellPeriod >= 12) {
+    } else if (this.swellPeriod >= 13) {
       return 4;
     } else if (this.swellPeriod >= 10) {
       return 3;
