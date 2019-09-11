@@ -21,7 +21,7 @@ Run ```cd swell``` in your terminal.
 Run ```yarn install``` or ```npm install```.  
 If you use npm you may be prompted to remove the yarn-lock file. That's fine. npm will create a package-lock file.  
 To run the tests use ```yarn test``` or ```npm run test```.  
-To run the project in a browser use ```yarn start``` or ```npm run start```.  
+To run the project in a browser, enable CORS, then use ```yarn start``` or ```npm run start```.  
 
 See [ABOUT TEMPLATE JS](./ABOUTTEMPLATE.md).
 
